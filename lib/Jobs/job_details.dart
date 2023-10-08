@@ -270,7 +270,7 @@ class _JobDetailsScreenState extends State<JobDetailsScreen> {
                             ),
                             SizedBox(width: 6,),
                             Text(
-                              'Applicants',
+                              'collaborators',
                               style: TextStyle(color: Colors.grey),
                             ),
                             const SizedBox(width: 10,),
@@ -289,7 +289,7 @@ class _JobDetailsScreenState extends State<JobDetailsScreen> {
                               children: [
                                 dividerWidget(),
                                 const Text(
-                                  'Recruitment',
+                                  'collaboration',
                                   style: TextStyle(
                                     fontSize: 18,
                                     color: Colors.white,
@@ -401,7 +401,7 @@ class _JobDetailsScreenState extends State<JobDetailsScreen> {
                             ),
                         dividerWidget(),
                         const Text(
-                          'Job Description',
+                          'project Description',
                           style: TextStyle(
                             fontSize: 18,
                             color: Colors.white,
@@ -441,9 +441,9 @@ class _JobDetailsScreenState extends State<JobDetailsScreen> {
                           child: Text(
                             isDeadlineAvailable
                             ?
-                                'Actively Recruiting, Send CV/Resume:'
+                                'Actively working, Send project details:'
                                 :
-                                'Deadline Passed away.',
+                                'project complete.',
                             style: TextStyle(
                               color: isDeadlineAvailable
                                   ?
@@ -467,7 +467,7 @@ class _JobDetailsScreenState extends State<JobDetailsScreen> {
                               borderRadius: BorderRadius.circular(13),
                             ),
                             child: const Text(
-                              'Easy Apply Now',
+                              'Easy collab Now',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
@@ -507,7 +507,7 @@ class _JobDetailsScreenState extends State<JobDetailsScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             const Text(
-                              'Deadline date:',
+                              'Published date:',
                               style: TextStyle(
                                 color: Colors.white,
                               ),
@@ -701,7 +701,7 @@ class _JobDetailsScreenState extends State<JobDetailsScreen> {
                                   {
                                     if(snapshot.data == null)
                                     {
-                                      const Center(child: Text('No Comment for this job.'),);
+                                      const Center(child: Text('No Comment for this project.'),);
                                     }
                                   }
                                   return ListView.separated(

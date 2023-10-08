@@ -19,10 +19,10 @@ class UploadJobNow extends StatefulWidget {
 
 class _UploadJobNowState extends State<UploadJobNow> {
 
-  final TextEditingController _jobCategoryController = TextEditingController(text: 'Select Job Category');
+  final TextEditingController _jobCategoryController = TextEditingController(text: 'Select project Category');
   final TextEditingController _jobTitleController = TextEditingController();
   final TextEditingController _jobDescriptionController = TextEditingController();
-  final TextEditingController _deadlineDateController = TextEditingController(text: 'Job Deadline Date');
+  final TextEditingController _deadlineDateController = TextEditingController(text: 'project start date');
 
   final _formKey = GlobalKey<FormState>();
   DateTime? picked;
@@ -83,7 +83,7 @@ class _UploadJobNowState extends State<UploadJobNow> {
         style: const TextStyle(
           color: Colors.white,
         ),
-        maxLines: valueKey == 'JobDescription' ? 3 : 1,
+        maxLines: valueKey == 'projectDescription' ? 3 : 1,
         maxLength: maxLength,
         keyboardType: TextInputType.text,
         decoration: const InputDecoration(
@@ -113,7 +113,7 @@ _showTaskCategoriesDialog({required Size size})
         return AlertDialog(
           backgroundColor: Colors.black54,
           title: const Text(
-            'Job Category',
+            'project Category',
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 20,
@@ -206,7 +206,7 @@ void _uploadTask() async
 
   if(isValid)
   {
-    if(_deadlineDateController.text == 'Choose job Deadline date' || _jobCategoryController.text == 'Choose job category')
+    if(_deadlineDateController.text == 'Choose publish date' || _jobCategoryController.text == 'Choose project category')
     {
       GlobalMethod.showErrorDialog(
         error: 'Please pick everything', ctx: context,
@@ -244,8 +244,8 @@ void _uploadTask() async
       _jobTitleController.clear();
       _jobDescriptionController.clear();
       setState(() {
-        _jobCategoryController.text = 'Choose job category';
-        _deadlineDateController.text = 'Choose job Deadline date';
+        _jobCategoryController.text = 'Choose project category';
+        _deadlineDateController.text = 'Choose publish date';
       });
     }catch(error){
     {
